@@ -1,64 +1,34 @@
-import { useState } from 'react';
 import Section from '../components/Section';
-import { submitContact } from '../services/contact';
+import CTAButton from '../components/CTAButton';
 
 /**
  * PUBLIC_INTERFACE
  * Contact
- * Contact form that performs a no-op submission for now.
+ * Contact guidance page that encourages using the chatbot.
  */
 export default function Contact() {
-  const [status, setStatus] = useState({ state: 'idle' });
-
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    setStatus({ state: 'submitting' });
-    const form = new FormData(e.currentTarget);
-    const payload = {
-      name: form.get('name'),
-      email: form.get('email'),
-      message: form.get('message'),
-    };
-    const res = await submitContact(payload);
-    if (res.ok) {
-      setStatus({ state: 'success' });
-      e.currentTarget.reset();
-    } else {
-      setStatus({ state: 'error', error: res.error || 'Submission failed' });
-    }
-  };
-
   return (
-    <Section title="Contact" description="Tell me about your idea—happy to help.">
-      <form onSubmit={onSubmit} className="card" style={{ maxWidth: 720 }}>
-        <label>Name
-          <input name="name" required style={inputStyle} />
-        </label>
-        <label style={{ marginTop: 12 }}>Email
-          <input type="email" name="email" required style={inputStyle} />
-        </label>
-        <label style={{ marginTop: 12 }}>Message
-          <textarea name="message" rows={5} required style={{ ...inputStyle, resize: 'vertical' }} />
-        </label>
-        <div style={{ marginTop: 16 }}>
-          <button className="btn btn-primary" disabled={status.state === 'submitting'}>
-            {status.state === 'submitting' ? 'Sending…' : 'Send message'}
-          </button>
+    <Section
+      title="Contact"
+      description="The fastest way to reach me is via the chat bubble in the lower-right corner."
+    >
+      <div className="card" style={{ maxWidth: 760 }}>
+        <p className="muted">
+          I use a lightweight onsite chatbot to triage inquiries and gather context. It runs locally in your browser
+          and does not send your messages to a server in this version.
+        </p>
+        <ol style={{ marginTop: 12, paddingLeft: 18 }}>
+          <li>Click the chat bubble in the lower-right corner.</li>
+          <li>Share your project goals, timeline, and any constraints.</li>
+          <li>Use the envelope icon in the chat to email a summary if you prefer email follow-up.</li>
+        </ol>
+        <div style={{ marginTop: 16, display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+          <CTAButton to="/" variant="ghost">Go home</CTAButton>
+          <a className="btn btn-primary" href="#!" onClick={(e) => { e.preventDefault(); const el = document.querySelector('.chatbot-fab'); el?.click(); }}>
+            Open chat
+          </a>
         </div>
-        {status.state === 'success' && <p className="muted" style={{ marginTop: 12 }}>Thanks! I’ll get back to you shortly.</p>}
-        {status.state === 'error' && <p style={{ color: 'var(--color-danger)', marginTop: 12 }}>{status.error}</p>}
-      </form>
+      </div>
     </Section>
   );
 }
-
-const inputStyle = {
-  display: 'block',
-  width: '100%',
-  marginTop: 6,
-  padding: '10px 12px',
-  borderRadius: '12px',
-  border: '1px solid var(--color-border)',
-  background: 'var(--color-surface)',
-  color: 'var(--color-text)',
-};

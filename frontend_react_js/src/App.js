@@ -12,6 +12,7 @@ import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
 import NotFound from './pages/NotFound';
 import { initAnalytics } from './services/analytics';
+import Chatbot from './components/Chatbot';
 
 // Initialize analytics on app load
 initAnalytics();
@@ -35,6 +36,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      <Chatbot />
     </div>
   );
 }
