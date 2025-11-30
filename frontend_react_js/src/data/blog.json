@@ -1,0 +1,23 @@
+[
+  {
+    "id": "note-outcomes",
+    "title": "Build toward outcomes",
+    "excerpt": "The best teams measure impact, not just output.",
+    "date": "2024-06-01",
+    "author": "PM, SaaS"
+  },
+  {
+    "id": "note-clarity",
+    "title": "Clarity beats complexity",
+    "excerpt": "Good architecture is boring in the best way possible.",
+    "date": "2024-03-17",
+    "author": "CTO, Fintech"
+  },
+  {
+    "id": "note-craft",
+    "title": "Craft matters",
+    "excerpt": "Small UX details compound over time.",
+    "date": "2023-11-10",
+    "author": "Design Lead"
+  }
+]

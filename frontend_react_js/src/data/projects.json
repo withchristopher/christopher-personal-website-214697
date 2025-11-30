@@ -1,0 +1,44 @@
+[
+  {
+    "id": "proj-analytics",
+    "title": "Product analytics platform",
+    "summary": "Full-stack analytics system enabling teams to track user behavior and outcomes.",
+    "stack": ["React", "Node", "PostgreSQL", "ClickHouse"],
+    "link": "#"
+  },
+  {
+    "id": "proj-designsystem",
+    "title": "Design system & component library",
+    "summary": "Built a scalable design system with tokens, components, and accessible patterns.",
+    "stack": ["React", "TypeScript", "CSS"],
+    "link": "#"
+  },
+  {
+    "id": "proj-automation",
+    "title": "Developer automation toolkit",
+    "summary": "CLI and service automations that cut release cycles by 30%.",
+    "stack": ["Go", "Node", "GitHub Actions"],
+    "link": "#"
+  },
+  {
+    "id": "proj-realtime",
+    "title": "Realtime collaboration",
+    "summary": "Live-editing and presence with CRDT-backed synchronization.",
+    "stack": ["React", "WebSockets", "CRDT"],
+    "link": "#"
+  },
+  {
+    "id": "proj-insights",
+    "title": "Insights dashboard",
+    "summary": "Executive dashboard with metrics and narratives.",
+    "stack": ["React", "D3", "Node"],
+    "link": "#"
+  },
+  {
+    "id": "proj-mobile",
+    "title": "Mobile companion app",
+    "summary": "Cross-platform app with offline-first architecture.",
+    "stack": ["React Native", "SQLite"],
+    "link": "#"
+  }
+]
